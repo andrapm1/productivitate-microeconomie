@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul Productivitate Complex</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+    .alert {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calcul Productivitate Complex</h1>
+    <label for="inputWorkers">Introduceți numărul de muncitori:</label>
+    <input type="number" id="inputWorkers" placeholder="Ex: 6">
+    <label for="inputProduction">Introduceți cantitatea de producție (separate prin virgulă):</label>
+    <input type="text" id="inputProduction" placeholder="Ex: 400,900,1260,1500">
+    <button onclick="calculeaza()">Calculează</button>
+    
+    <div class="alert" id="errorMessage"></div>
+    
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>L (Număr muncitori)</th>
+          <th>Q (Producție)</th>
+          <th>Pmg (Prod. Marginală)</th>
+          <th>Pm (Prod. Medie)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="answers"></div>
+    <canvas id="productivityChart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
